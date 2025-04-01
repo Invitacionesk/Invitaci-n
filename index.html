@@ -41,6 +41,14 @@
     Tu navegador no admite el elemento de audio.
 </audio>
     <script>
+    window.addEventListener('click', () => {
+        const audio = document.getElementById('audio');
+        if (audio.paused) {
+            audio.play().catch(error => console.error('Error al reproducir el audio:', error));
+        }
+    }, { once: true }); // Solo se ejecutará una vez
+</script>
+    <script>
         let contador = 0;
 
         function confirmarAsistencia() {
